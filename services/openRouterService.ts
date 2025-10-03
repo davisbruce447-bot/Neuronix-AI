@@ -2,9 +2,9 @@
 
 export const generateResponse = async (modelId: string, prompt: string): Promise<string> => {
     try {
-        // This now calls our own secure Vercel Serverless Function
+        // This now calls our own secure Netlify Function
         // instead of OpenRouter directly. The secret API key is handled on the server.
-        const response = await fetch('/api/generate', {
+        const response = await fetch('/.netlify/functions/generate', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
